@@ -7,4 +7,5 @@ func main() {
   fmt.Println("Knut Henæs")
 fmt.Println("Knut Andreas Aas")
 	fmt.Println("Sondre Lømsland")
+	fmt.Println("Vemund Jernsletten")
 }
