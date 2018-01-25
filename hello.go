@@ -6,4 +6,5 @@ func main() {
 	fmt.Println("Hello, 世界")
   fmt.Println("Knut Henæs")
 fmt.Println("Knut Andreas Aas")
+	fmt.Println("Sondre Lømsland")
 }
