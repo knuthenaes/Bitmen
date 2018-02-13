@@ -1,0 +1,58 @@
+Sorting.go
+
+Sorting er et program som sorterer verdier i stigende rekkefølge. I vår modifiserte bubble sort, anvendes en liste, 
+hvor listen inneholder verdier eller integers. Funksjonen starter med å definere en liste med variabler, hvor «n» er lengden på listen. 
+Swapped er en boolean som er definert som true når variablene er sortert. I for-løkka(swapped) blir swapped = false, for å kjøre 
+igjennom iterasjoner fra x = 1 til x er mindre enn n-1. x øker for hver iterasjon (x++). If list[x-1] > list[x], sier at hvis det 
+forrige tallet i listen er større enn det neste, skal verdiene skifte plass. F.eks x=1, list[0] > list[1], hvis første plassen er 
+større enn plass nummer to, skjer det en swap.
+Hvis forrige verdi er større, vil tallene bli sortert og swapped endres til true. Deretter går x til neste verdi.
+
+func Bubble_sort_modified(list []int) 
+{
+   n := len(list)
+   swapped := true
+   for swapped 
+   {
+      swapped = false
+      for x := 1; x < n-1; x++ 
+      {
+         if list[x-1] > list[x] 
+         {
+            // Skifter verdiene
+            list[x], list[x-1] = list[x-1], list[x]
+            swapped = true
+         }
+      }
+   }
+}
+
+
+Sorting test.go
+
+benchmarkBSortModified bruker parameterene «x» som er antall tall som skal sorteres og «b» er importert fra testing-package. 
+For-løkken kjører fra j=0 til j er mindre enn b.N, j øker for hver iterasjon. b.StopTimer() stopper testen og b.StartTimer() starter 
+testen. Implementert i påfølgende rekkefølger indikerer at testen blir stoppet og startet igjen for å ikke inkludere tiden det tar å 
+hente verdiene med i testresultatene. Bubble_sort_modified(values) henter funksjonen fra sorting.go med påfølgende values definert 
+to linjer over.
+Func BenchmarkBSortModified 100, 1000, 10000 anvender (b *testing.B) som parameter i benchmarktestene og kaller på funksjonen 
+benchmarkBSortModified med x og b som parametere for å kjøre benchmarkingen. I disse tilfellene er x lik 100, 1000 og 10000.
+
+func BenchmarkBSortModified100(b *testing.B) {
+   benchmarkBSortModified(x=100, b)}
+
+func BenchmarkBSortModified1000(b *testing.B) {
+   benchmarkBSortModified(x=1000, b)}
+
+func BenchmarkBSortModified10000(b *testing.B) {
+   benchmarkBSortModified(x=10000, b)}
+
+func benchmarkBSortModified(x int, b *testing.B) {
+   for j := 0; j < b.N; j++ {
+      b.StopTimer()
+      values := perm(x)
+      b.StartTimer()
+      Bubble_sort_modified(values)
+
+   }
+}
