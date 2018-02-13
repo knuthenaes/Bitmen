@@ -77,5 +77,19 @@ BenchmarkQSort100-4                       200000              5627 ns/op
 BenchmarkQSort1000-4                       20000             74568 ns/op
 BenchmarkQSort10000-4                       2000            839576 ns/op
 
+Big-O-Sheet er en måte å beskrive kompleksiteten til en algoritme innenfor en tidsramme. Grafene viser f.eks hvis en algoritme
+bruker 10 sekunder på å løse 100 elementer, hvor lang tid vil det ta å løse 200 elementer. 
+For å få et autentisk svar, burde antall elementer komme til et punkt hvort  de mindre nyansene er ute av spill.
+BubbleSort er en relative enkel sorterings algoritme som viser i våre resultater at dens nivå av kompleksitet O(n^2), ikke klarer 
+effektivt å sortere ved høy mengde av elementer. n i denne sammenhengen er antall input. 
+Denne effektviteten avtar ganske drastisk ved stigende elementmengde. 
+
+Quicksort er en mer effektiv måte å sortere elementer. Denne algoritmen bruker vanligvis en
+logaritmisk tilnærming O(n log n) for å løse store oppgaver, og i «worst case» ifølge Big-O bytter den til O(n^2). 
+Worst case kan blant annet skje hvis pivoten deler listen i to underlister med størrelser på 0 og (n -1), men som sjeldent forekommer.
+I Big-O-grafen skjer det en sammenligning av de forskjellige metodene og hvilken tilnærming som blir brukt. 
+Denne grafen viser at QuickSort sin tilnærming O(n log n) klarer å utføre mange operasjoner med store mengder elementer jevnt 
+utover grafen med en tilnærmet lik lineær kurve. Tidsmessig klarer BubbleSort å utføre operasjoner med færre elementer, men med stigende
+elementer blir tilnærmingen sakte sammenlignet med QuickSort, noe som også vises i resultatene. 
 
 
