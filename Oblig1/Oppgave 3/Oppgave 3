@@ -1,14 +1,14 @@
 package main
 
-//Avslutningsmeldingen som kommer etter en stopper loopen kommer
-// når løkken blir stoppet ved hjep av ctrl + c, ctrl + "break"
+//Avslutningsmeldingen som kommer etter en stopper loopen, kommer
+// når løkken blir stoppet ved hjep av ctrl + c, ctrl + "break".
 
 import (
 	"fmt"
 	"os"
 	"os/signal"
 
-	//"time" // or "runtime"
+	//"time" // eller "runtime"
 )
 
 	func main() {
@@ -21,6 +21,7 @@ import (
 			os.Exit(1)
 		}()
 
+		//For-løkke som teller uendelig 
 		for i :=0;;i++ {
 			fmt.Println(i)
 			}
