@@ -5,6 +5,7 @@ Det er mulig å stoppe koden på to måter. Enten ved å trykke CTRL + C eller C
 Når programmet kjører vil prosessorbruken øke kraftig.
 
 Datamaskin 1:
+Koden kjørt i Goland:
 Prosessorbruk, normal = 0 %
 Prosessorbruk, kjørende kode = 44 % 
 
@@ -12,8 +13,39 @@ Minne, normal = 334 MB
 Minne, kjørende kode = 345 MB
 
 Datamaskin 2:
+Koden kjørt i Goland:
 Prosessorbruk, normal = 0,2 %
 Prosessorbruk, kjørende kode = 83 %
 
 Minne, normal = 541 MB
 Minne, kjørende kode = 570 MB
+
+Datamaskin 3:
+Koden kjørt i Goland:
+Prosessorbruk, totalt uten kode = 5 %
+Prossorbruk, program passivt = 0 %
+
+Prosessorbruk, program kjørende kode = 85 %
+Prossessorbruk, totalt med kode = 90%
+
+
+Minne, totalt uten kode = 0 %
+Minne, program passivt = 400 MB
+
+Minne, kjørende kode = 500 MB
+Minne, totalt med kode = 57 %
+
+Koden kjørt i Command Promt:
+Prosessorbruk, totalt uten kode = 26 %
+Prossorbruk, program passivt = 0 %
+
+Prossessorbruk, totalt med kode = 31%
+Prosessorbruk, program kjørende kode = 24 %
+
+
+Minne, totalt uten kode = 52 %
+Minne, program passivt = 0 MB 
+
+Minne, totalt med kode = 55 %
+Minne, kjørende kode = 18 MB
+
