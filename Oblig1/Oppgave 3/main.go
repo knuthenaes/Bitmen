@@ -21,7 +21,7 @@ import (
 			os.Exit(1)
 		}()
 
-		//For-løkke som teller uendelig 
+		//Loop som teller uendelig oppover til vi velger å avbrute/stoppe koden 
 		for i :=0;;i++ {
 			fmt.Println(i)
 			}
