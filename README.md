@@ -9,14 +9,14 @@ IS-105
 
 
 ## Oblig1 ##
-###### Oppgave 1 ######
+###### [Oppgave 1](link.com) ######
 tekst
 
-###### Oppgave 2 ######
+###### [Oppgave 2](link.com) ######
 tekst
 
-###### Oppgave 3 ######
+###### [Oppgave 3](link.com) ######
 tekst
 
-###### Oppgave 4 ######
+###### [Oppgave 4](link.com) ######
 tekst
