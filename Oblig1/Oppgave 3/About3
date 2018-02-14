@@ -2,7 +2,7 @@ I koden er det laget en evig loop som teller fra null, og stopper først når ko
 Det er mulig å stoppe koden på to måter. Enten ved å trykke CTRL + C eller CTRL + Break. Disse to kommandoene trigger avslutningsmeldingen 
 "STOP THIS!". 
 
-Når programmet kjører vil prosessorbruken øke kraftig.
+Når programmet kjører vil prosessorbruken øke kraftig, noe avhengig av programmet som kjører det.
 
 Datamaskin 1:
 Koden kjørt i Goland:
