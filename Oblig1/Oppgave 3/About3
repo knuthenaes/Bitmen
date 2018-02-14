@@ -23,10 +23,10 @@ Minne, kjørende kode = 570 MB
 Datamaskin 3:
 Koden kjørt i Goland:
 Prosessorbruk, totalt uten kode = 5 %
-Prossorbruk, program passivt = 0 %
+Prosessorbruk, program passivt = 0 %
 
 Prosessorbruk, program kjørende kode = 85 %
-Prossessorbruk, totalt med kode = 90%
+Prosessorbruk, totalt med kode = 90%
 
 
 Minne, totalt uten kode = 0 %
@@ -37,9 +37,9 @@ Minne, totalt med kode = 57 %
 
 Koden kjørt i Command Promt:
 Prosessorbruk, totalt uten kode = 26 %
-Prossorbruk, program passivt = 0 %
+Prosessorbruk, program passivt = 0 %
 
-Prossessorbruk, totalt med kode = 31%
+Prosessorbruk, totalt med kode = 31%
 Prosessorbruk, program kjørende kode = 24 %
 
 
