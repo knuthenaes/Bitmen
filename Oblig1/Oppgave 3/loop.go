@@ -1,7 +1,5 @@
 package main
 
-//Avslutningsmeldingen som kommer etter en stopper loopen, kommer
-// når løkken blir stoppet ved hjep av ctrl + c, ctrl + "break".
 
 import (
 	"fmt"
