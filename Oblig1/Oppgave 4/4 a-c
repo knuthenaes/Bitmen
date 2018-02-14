@@ -34,4 +34,7 @@ Koden skriver Error for hvert symbol som ikke er fra extended ASCII.
 
 Vi testet koden kun med Extended ASCII,(x8a\x8b\x8c) og fikk følgende resultat;
 
+C:\Users\Sondre\Desktop\Oblig1\src\ascii>go test
+PASS
+ok    _C_\Users\Sondre\Desktop\Oblig1\src\ascii>    0.126s
 
