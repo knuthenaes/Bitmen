@@ -2,10 +2,10 @@
 IS-105
 
 ## Gruppemedlemmer: ##
-**Knut Andreas Aas  
-Knut Henæs  
-Sondre Lømsland  
-Vemund Jernsletten**
+* **Knut Andreas Aas  
+* Knut Henæs  
+* Sondre Lømsland  
+* Vemund Jernsletten**
 
 
 ## Oblig1 ##
