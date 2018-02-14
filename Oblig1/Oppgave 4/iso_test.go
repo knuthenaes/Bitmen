@@ -14,7 +14,7 @@ func TestExtendedASCIIText(t *testing.T) {
 	}
 }
 
-// Under er en test av testen. Koden henter ascii2 (x80\x81\x82\x83\x84\x85) som beviser at testen fungerer
+// Under er en test av testen. Koden henter ascii2 (x8a\x8b\x8c) som beviser at testen fungerer
 // dersom all kode er extended ascii code.
 
 //func TestExtendedASCIIText(t *testing.T) {
