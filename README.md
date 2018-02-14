@@ -20,4 +20,4 @@ Oppgave 2 tar for seg ulike [sorteringsalgoritmer](https://github.com/knuthenaes
 Oppgave 3 [analyserer](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%203/About3) konsekvensene for hardware av å kjøre [en endeløs loop](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%203/loop.go), og hvordan ulike avslutningskommandoer virker på prossessen.
 
 ### [Oppgave 4](https://github.com/knuthenaes/Bitmen/tree/master/Oblig1/Oppgave%204) ###
-tekst
+[Oppgave 4]( https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave 4/4 a-c) utforsker hvordan symbolsystemer representeres tegnsymboler digitalt. I 4.A iterer en [kode]( https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%204/ascii.go) over tegnene i extended ASCII, og demonstrer forholdet mellom symbolet og nummeret som til grunne for det, hvordan både heksadesimaltall og binærtall er velegnet som grunntall og hvordan ulike programmiljøer bare tar i bruk deler av symbolene i extended ASCII. 4.B
