@@ -6,4 +6,32 @@
 
 4b
 
-Funksjonen ExtendedASCIIText () skriver " € ÷ ¾ dollar ". Alle i gruppen bruker samme plattform (Windows) og vi har prøvd ulike terminaler, men ingen av terminalene vil skrive Eurotegn. 
+Funksjonen ExtendedASCIIText () skriver " € ÷ ¾ dollar ". Alle i gruppen bruker samme plattform (Windows) og vi har prøvd ulike terminaler, men ingen av terminalene vil skrive Eurosymbolet. 
+
+4c
+
+Testen failer, dette er fordi Euro er eneste tegn som er fra Extended ASCII.
+
+C:\Users\Sondre\Desktop\Oblig1\src\ascii>go test
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+ERROR, value not in extended ASCII
+--- FAIL: TestExtendedASCIIText (0.01s)
+FAIL
+exit status 1
+
+Koden skriver Error for hvert symbol som ikke er fra extended ASCII. 
+
+Vi testet koden kun med Extended ASCII,(x8a\x8b\x8c) og fikk følgende resultat;
+
+
