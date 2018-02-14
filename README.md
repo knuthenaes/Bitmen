@@ -11,12 +11,13 @@ Vemund Jernsletten**
 ## Oblig1 ##
 
 ###### Oppgave 1 ######
-
+tekst
 
 ###### Oppgave 2 ######
-
+tekst
 
 ###### Oppgave 3 ######
-
+tekst
 
 ###### Oppgave 4 ######
+tekst
