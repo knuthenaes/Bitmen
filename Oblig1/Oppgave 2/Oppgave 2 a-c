@@ -92,4 +92,4 @@ Denne grafen viser at QuickSort sin tilnærming O(n log n) klarer å utføre man
 utover grafen med en tilnærmet lik lineær kurve. Tidsmessig klarer BubbleSort å utføre operasjoner med færre elementer, men med stigende
 elementer blir tilnærmingen sakte sammenlignet med QuickSort, noe som også vises i resultatene. 
 
-
+<img src="https://user-images.githubusercontent.com/35766206/36199508-112bb656-117a-11e8-93c9-d773ee1f5f4f.jpg" width="90%"></img>
