@@ -17,7 +17,7 @@ IS-105
 Oppgave 2 tar for seg ulike [sorteringsalgoritmer](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%202/sorting.go) og [benchtester](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%202/sorting_test.go) av disse, og [analyserer](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%202/Oppgave%202%20a-c) implikasjonene av disse.
 
 ### [Oppgave 3](https://github.com/knuthenaes/Bitmen/tree/master/Oblig1/Oppgave%203) ###
-Oppgave 3 [analyserer](link.com) konsekvensene for hardware av å kjøre [en endeløs loop](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%203/loop.go), og hvordan ulike avslutningskommandoer virker på prossessen.
+Oppgave 3 [analyserer](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%203/About3) konsekvensene for hardware av å kjøre [en endeløs loop](https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%203/loop.go), og hvordan ulike avslutningskommandoer virker på prossessen.
 
 ### [Oppgave 4](https://github.com/knuthenaes/Bitmen/tree/master/Oblig1/Oppgave%204) ###
 tekst
