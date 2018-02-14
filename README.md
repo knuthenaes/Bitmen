@@ -2,21 +2,21 @@
 IS-105
 
 ## Gruppemedlemmer: ##
-**Knut Andreas Aas
-Knut Henæs
-Sondre Lømsland
+**Knut Andreas Aas  
+Knut Henæs  
+Sondre Lømsland  
 Vemund Jernsletten**
 
 
-##Oblig1##
+## Oblig1 ##
 
-#Oppgave 1#
-
-
-#Oppgave 2#
+# Oppgave 1 #
 
 
-#Oppgave 3#
+# Oppgave 2 #
 
 
-#Oppgave 4#
+# Oppgave 3 #
+
+
+# Oppgave 4 #
