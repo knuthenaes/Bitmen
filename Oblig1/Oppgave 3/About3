@@ -4,6 +4,8 @@ Det er mulig å stoppe koden på to måter. Enten ved å trykke CTRL + C eller C
 
 Når programmet kjører vil prosessorbruken øke kraftig, noe avhengig av programmet som kjører det.
 
+Avslutningsmeldingen som kommer etter at en stopper loopen, kommer når løkken blir stoppet ved hjep av ctrl + c, ctrl + "break".
+
 Datamaskin 1:
 Koden kjørt i Goland:
 Prosessorbruk, normal = 0 %
@@ -24,28 +26,22 @@ Datamaskin 3:
 Koden kjørt i Goland:
 Prosessorbruk, totalt uten kode = 5 %
 Prosessorbruk, program passivt = 0 %
-
-Prosessorbruk, program kjørende kode = 85 %
-Prosessorbruk, totalt med kode = 90%
-
-
 Minne, totalt uten kode = 0 %
 Minne, program passivt = 400 MB
 
-Minne, kjørende kode = 500 MB
+Prosessorbruk, totalt med kode = 90%
+Prosessorbruk, program kjørende kode = 85 %
 Minne, totalt med kode = 57 %
+Minne, kjørende kode = 500 MB
 
 Koden kjørt i Command Promt:
 Prosessorbruk, totalt uten kode = 26 %
 Prosessorbruk, program passivt = 0 %
-
-Prosessorbruk, totalt med kode = 31%
-Prosessorbruk, program kjørende kode = 24 %
-
-
 Minne, totalt uten kode = 52 %
 Minne, program passivt = 0 MB 
 
+Prosessorbruk, totalt med kode = 31%
+Prosessorbruk, program kjørende kode = 24 %
 Minne, totalt med kode = 55 %
 Minne, kjørende kode = 18 MB
 
