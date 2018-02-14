@@ -1,0 +1,19 @@
+I koden er det laget en evig loop som teller fra null, og stopper først når koden får en input fra datamaskinen
+Det er mulig å stoppe koden på to måter. Enten ved å trykke CTRL + C eller CTRL + Break. Disse to kommandoene trigger avslutningsmeldingen 
+"STOP THIS!". 
+
+Når programmet kjører vil prosessorbruken øke kraftig.
+
+Datamaskin 1:
+Prosessorbruk, normal = 0 %
+Prosessorbruk, kjørende kode = 44 % 
+
+Minne, normal = 334 MB 
+Minne, kjørende kode = 345 MB
+
+Datamaskin 2:
+Prosessorbruk, normal = 0,2 %
+Prosessorbruk, kjørende kode = 83 %
+
+Minne, normal = 541 MB
+Minne, kjørende kode = 570 MB
