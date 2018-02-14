@@ -7,14 +7,6 @@ IS-105
 * Sondre Lømsland
 * Vemund H. Jernsletten
 
-
-
-
-https://github.com/knuthenaes/Bitmen/blob/master/Oblig1/Oppgave%202/Oppgave%202%20a-c
-<img src="https://user-images.githubusercontent.com/35766206/36199508-112bb656-117a-11e8-93c9-d773ee1f5f4f.jpg" width="90%"></img> 
-
-
-
 ## Oblig1 ##
 ### [Oppgave 1](link.com) ###
 ![Tabell, tallverdier i ulike basetall](https://user-images.githubusercontent.com/35767860/36200207-34ecf8c8-117c-11e8-9982-b761af3359cb.jpg)
