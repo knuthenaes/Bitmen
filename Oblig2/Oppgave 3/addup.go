@@ -1,35 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	var ledd1 int16
-	var ledd2 int16
 
-	fmt.Println("Skriv inn den første verdien du vil addere:")
-	fmt.Scanln(&ledd1)
-	/* Oppgave C - må behandle ikke-heltall og for store tall på et eller annet vis:
-	if [error - vet enda ikke korleis en skal derivere dette]
-	for [error] = 1 {
-		fmt.Println("Hmm, det er fint om du begrenser tallverdien til et heltall (innenfor |32000|) - verdier utenfor int16 vil ikke kunne kalkuleres. Så la oss ta dette steget på nytt.\n\nSkriv inn første verdi du vil legge sammen:"
-	fmt.Scanln(&ledd1)
-	if !error, sett error til 0
-	}
-	 */
-	fmt.Println("Skriv inn den andre verdien du vil addere:")
-	fmt.Scanln(&ledd2)
-	/* Oppgave C - må behandle ikke-heltall, for store tall på et eller annet vis:
-	if [error - vet enda ikke korleis en skal derivere dette]
-	for [error] = 1 {
-		fmt.Println("Hmm, det er fint om du begrenser tallverdien til et heltall (innenfor |32000|) - verdier utenfor int16 vil ikke kunne kalkuleres. Så la oss ta dette steget på nytt.\n\nSkriv inn andre verdi du vil legge sammen:"
-	fmt.Scanln(&ledd1)
-	if !error, sett error til 0
-	}
-	 */
+	c := make(chan int)
+	go readInput(c)
+	time.Sleep(5 * 1e2) // Anvendes for at koden ikke skal kjøre igjennom koden før brukeren ikke får tastet inn en verdi
+	go addUp(c)
+	time.Sleep(5 * 1e2)
+}
 
-	fmt.Println("Summen av tallene er:" )
-	fmt.Print(funkB(ledd1, ledd2))}
+func readInput(c chan int) {
 
-func funkB(x int16, y int16) int16 {
-	return x + y
+	var x1 int
+	var x2 int
+
+	fmt.Println("Skriv inn det første taller du vil addere: ")
+	fmt.Scan(&x1)
+	fmt.Println("Skriv inn det andre tallet du vil addere: ")
+	fmt.Scan(&x2)
+
+	c <- x1 //sender data via Channel
+	c <- x2
+
+	res := <-c // mottar resultat fra Channel
+	fmt.Println("sum: ", res)
+}
+
+func addUp(c chan int) {
+	n1, n2 := <-c, <-c // mottar data fra readInput()
+	res := (n1 + n2)
+
+	c <- res // sender resultat til readInput()
+
 }
