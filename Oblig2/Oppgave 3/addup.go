@@ -3,38 +3,51 @@ package main
 import (
 	"fmt"
 	"time"
+	"os"
+	"os/signal"
 )
 
 func main() {
 
+	d := make(chan os.Signal, 1)
+	signal.Notify(d, os.Interrupt)
+
+	go func() {
+		<-d
+		fmt.Println("Code red: emergency shut down!")
+		os.Exit(1)
+	}()
+
 	c := make(chan int)
 	go readInput(c)
-	time.Sleep(5 * 1e2) // Anvendes for at koden ikke skal kjøre igjennom koden før brukeren ikke får tastet inn en verdi
+	time.Sleep(5 * 1e9)
 	go addUp(c)
-	time.Sleep(5 * 1e2)
+	time.Sleep(5 * 1e9)
 }
 
 func readInput(c chan int) {
 
-	var x1 int
-	var x2 int
+	var n1 int
+	var n2 int
 
-	fmt.Println("Skriv inn det første taller du vil addere: ")
-	fmt.Scan(&x1)
-	fmt.Println("Skriv inn det andre tallet du vil addere: ")
-	fmt.Scan(&x2)
+	fmt.Println("Enter num: ")
+	fmt.Scan(&n1)
+	fmt.Println("Enter num: ")
+	fmt.Scan(&n2)
 
-	c <- x1 //sender data via Channel
-	c <- x2
+	c <- n1 //sender data via channel
+	c <- n2
 
-	res := <-c // mottar resultat fra Channel
-	fmt.Println("sum: ", res)
+	res := <-c // mottar resultat fra channel
+	fmt.Println("Result: ", res)
+
 }
 
 func addUp(c chan int) {
+
 	n1, n2 := <-c, <-c // mottar data fra readInput()
 	res := (n1 + n2)
 
-	c <- res // sender resultat til readInput()
+	c <- res // sender resultat tilbake til readInput()
 
 }
