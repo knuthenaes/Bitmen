@@ -1,7 +1,19 @@
 Go bruker error verdier for å indikere en unormal tilstand. Error typen er en interface type. En error variabel representerer en verdi som beskriver seg selv som en string. 
 
 ADDUP.GO
+Konverterer n1 og n2 som er string til integer, en error oppstår når input-verdien er av type string og skriver ut feilmelding. os.Exit stopper programmet.
 
+tall1, err := strconv.Atoi(n1)
+	if (err != nil) {
+		fmt.Println("Error, invalid input. Program shutting down ")
+		os.Exit(0)
+	}
+   
+   tall2, err := strconv.Atoi(n2)
+	if (err != nil) {
+		fmt.Println("Error, invalid input. Program shutting down")
+		os.Exit(0)
+	}
 
 ADDTOFILE.GO
 Følgende kode bruker os.Create for å opprette en fil. Hvis error er forskjellig fra null, vil en error oppstå og log.Fatal printer en error message og stopper. Defer lar oss lukke filen rett etter at vi har åpnet den. Defer lukker filen uavhengig av antall statements i funksjonen. Defer brukes til å forenkle funksjoner.
