@@ -1,7 +1,15 @@
 Go bruker error verdier for å indikere en unormal tilstand. Error typen er en interface type. En error variabel representerer en verdi som beskriver seg selv som en string. 
 
 ADDUP.GO
-Error sørger for at integer er eneste gyldige input i koden. Dersom du skriver string vil det komme en feilmelding og prosessen avsluttes.
+Problemet med å innføre en feilbeskjed etter input1 eller input2, hvis bruker skulle skrive string
+er at hver string f.eks "a", blir = 0 i regnestykket. Koden returnerer ikke en string. En kode vi prøvde på var:
+	if reflect.TypeOf(n1) == reflect.TypeOf("")  {
+		fmt.Println("error, please select a number. Shutting down")
+        os.Exit(0)
+        time.Sleep(5)
+	}
+Som sier at hvis int skulle bli en type string, så ville det komme en error-beskjed og programmet lukkes. Med tanke på at alle karakterer blir 0, blir ikke dette en stringtype.
+Dette er blitt diskutert med hjelpelærer og fant heller ingen andre løsninger. Hvis det skulle dukke opp en string, blir derfor dette antatt som 0 og kjører videre til resultat = 0.
 
 ADDTOFILE.GO
 Følgende kode bruker os.Create for å opprette en fil. Hvis error er forskjellig fra null, vil en error oppstå og log.Fatal printer en error message og stopper. Defer lar oss lukke filen rett etter at vi har åpnet den. Defer lukker filen uavhengig av antall statements i funksjonen. Defer brukes til å forenkle funksjoner.
