@@ -1,0 +1,84 @@
+Go bruker error verdier for å indikere en unormal tilstand. Error typen er en interface type. En error variabel representerer en verdi som beskriver seg selv som en string. 
+
+Følgende kode bruker os.Create for å opprette en fil. Hvis error er forskjellig fra null, vil en error oppstå og log.Fatal printer en error message og stopper. Defer lar oss lukke filen rett etter at vi har åpnet den. Defer lukker filen uavhengig av antall statements i funksjonen. Defer brukes til å forenkle funksjoner.
+
+file, err := os.Create("result.txt")
+if err != nil {
+   log.Fatal("Cannot create file", err)
+}
+defer file.Close()
+
+Bruker os:openfile til å åpne tekstfilen, os.O_APPEND tilføyer data underveis til filen, os.O_CREATE lager en fil hvis den ikke eksisterer fra før. os.O_WRONLY åpner filen for skriving.
+
+f, err := os.OpenFile("result.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+if err != nil {
+   log.Fatal(err)
+
+I denne koden ignores error ved hjelp av _, og printer Hvis error er lik null, hvis null og err er ulike initialiseres log.Fatal err.
+
+if _, err := fmt.Fprintf(f, "%d\n%d", n1, n2); err != nil {
+   log.Fatal(err)
+}
+
+Lukker filen, hvis error er forskjellig fra null. 
+
+if err := f.Close(); err != nil {
+   log.Fatal(err)
+}
+
+Sjekker for error i koden, hvis e er forskjellig fra null brukes Panic. Panic er en innebygd funksjon som stopper den ordinære flyten av kontroll og stopper gjennomføringen av e, utenom deferred funksjoner som gjennomføres som normalt. 
+
+func checkErr(e error) {
+   if e != nil {
+      panic(e)
+   }
+
+Leser resultat fra fil, lagrer siste tall i resultat og konverterer til int.
+
+func readResult(path string) {
+   data, err := ioutil.ReadFile(path)
+   checkErr(err)
+
+tempData := string(data)
+stringData := strings.Split(tempData, "\n")
+temp := stringData[len(stringData)-2]
+
+resultat, err := strconv.Atoi(temp)
+checkErr(err)
+
+Registrerer en path av type string og antall strings. Åpner filens path, hvis error er forskjellig fra null, vil den returnerer en null verdi og error.
+
+func readLines(path string) ([]string, error) {
+   file, err := os.Open(path)
+   if err != nil {
+      return nil, err
+   }
+   defer file.Close()
+
+Leser antall linjer i tekstfilen. Dersom err er ulike null, vil log.Fatal intialiseres og logge en error av type string.
+
+func sumfromfile()  {
+   lines, err := readLines("result.txt")
+   if err != nil {
+      log.Fatalf("readLines: %s", err)
+   }
+
+Bruker os:openfile til å åpne tekstfilen, os.O_APPEND tilføyer data underveis til filen, os.O_CREATE lager en fil hvis den ikke eksisterer fra før. os.O_WRONLY åpner filen for skriving.
+
+   f, err := os.OpenFile("result.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+   if err != nil {
+      log.Fatal(err)
+   }
+   
+   Ignorerer err og printer resultatet hvis error er det samme som null, log.Fatal hvis de er ulike.
+   
+   if _, err := fmt.Fprintf(f,"\n%d\n", result); err != nil {
+      log.Fatal(err)
+   }
+
+Lukker filen, hvis err er ulik null, log.Fatal. 
+
+   if err := f.Close(); err != nil {
+      log.Fatal(err)
+   }
+
