@@ -65,8 +65,8 @@ b) Skriv to programmer (addtofile.go og sumfromfile.go) som kommuniserer med hve
  sumfromfile.go: Leser tall fra fil laget av program A og adderer de to tallene. Summen skrives tilbake til samme fil. Program A leser resultatet fra fil og skriver ut summen til stdout.
 
  
- c) Beskriv og implementer feilhåndtering på all I/O i oppgave a) og b). Se https://blog.golang.org/error-handling-and-go (Lenker til en ekstern side.)Lenker til en ekstern side. for mer informasjon om feilhåndtering i Go.
-
+ c) Beskriv og implementer feilhåndtering på all I/O i oppgave a) og b)
+ 
 d) Implementer håndtering av SIGINT i programmene i a) og b); programmene skal skrive ut en avslutningsmelding dersom de mottar SIGINT før de fullfører naturlig.
 
 e) Bygg filene som i oppgave 1 og 2 til kjørbare filer på ditt operativsystem og legg dem ved i /bin mappen.
