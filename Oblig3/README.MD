@@ -1,3 +1,9 @@
+Knut Berger Henæs
+Sondre Lømsland
+Knut Andreas Aas
+Vemund Jernsletten
+
+
 Oppgave 1
 
 a) Sett opp en webserver som lytter til port 8080.
