@@ -1,5 +1,7 @@
 Oppgave 1
+
 a) Sett opp en webserver som lytter til port 8080.
+
 b) Når klienter aksesserer webserveren på path lik "/" skal klienten få tilbake strengen "Hello, client".
 Strengen skal vises i nettleseren.
 
