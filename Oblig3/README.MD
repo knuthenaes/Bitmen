@@ -1,10 +1,10 @@
 # Obligatorisk oppgave 3 #
 
 #### Gruppemedlemmer ####
-* Knut Berger Henæs
+* Knut Andreas Aas 
+* Knut Henæs 
 * Sondre Lømsland
-* Knut Andreas Aas
-* Vemund Haugevik Jernsletten
+* Vemund H. Jernsletten
 
 
 ## Oppgave 1 ##
