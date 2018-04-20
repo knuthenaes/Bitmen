@@ -28,3 +28,5 @@ Dataen som skal presenteres skal hentes fra fem ulike APIer, hvor alle returnere
 ## [Oppgave 3](https://github.com/knuthenaes/Bitmen/tree/master/Oblig3/src/Oppgave%203) UDP/TCP server og Internett standarder ##
 
 Implementer et serverprogram i henhold til RFC 865. Serveren skal svare både på UDP og TCP.
+
+FYI: Når serveren lytter etter tilkoblinger på port 17, så fungerer det ved hjelp av kommandoen "telnet localhost 17". Dette gjelder TCP, men når det kommer til UDP så må NETCAT lastes ned. Dette er fordi telnet kun fungerer til TCP, mens NETCAT fungerer til begge deler. Vi pratet med Martin Nenseth, han sa dette var godt nok.
