@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oppgave 2</title>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" align="center">
+            <div class="container">
+                <h2>Miljøstasjoner i Stavanger</h2>
+                <p>Data hentet fra <b>https://hotell.difi.no/api/json/stavanger/miljostasjoner</b></p>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Latitude</th>
+                        <th>Navn</th>
+                        <th>Plast</th>
+                        <th>GlassMetall</th>
+                        <th>TekstilSko</th>
+                        <th>Longitude</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range $.Entries}}
+                    <tr>
+                        <th>{{.Latitude}}</th>
+                        <th>{{.Navn}}</th>
+                        <th>{{.Plast}}</th>
+                        <th>{{.GlassMetall}}</th>
+                        <th>{{.TekstilSko}}</th>
+                        <th>{{.Longitude}}</th>
+                    </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</head>
+</html>
