@@ -1,0 +1,222 @@
+package main
+
+import (
+	"net/http"
+	"log"
+	"io/ioutil"
+	"encoding/json"
+	"html/template"
+)
+
+func hello(w http.ResponseWriter, r *http.Request) {
+	b := "Hello, client"
+	be, err := json.Marshal(b)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(be)
+}
+
+type Fylke struct {
+	Entries []struct {
+		Navn   string `json:"navn"`
+		Nummer string `json:"nummer"`
+	} `json:"entries"`
+}
+
+type Stasjon struct {
+	Entries []struct {
+		Latitude  string `json:"latitude"`
+		Navn      string `json:"navn"`
+		Plast   string `json:"plast"`
+		GlassMetall string `json:"glass_metall"`
+		TekstilSko     string `json:"tekstil_sko"`
+		Longitude string `json:"longitude"`
+	} `json:"entries"`
+
+}
+
+type Kolumbus struct {
+	Entries []struct {
+		CompanyCode int `json:"CompanyCode"`
+		Dataset int `json:"Dataset"`
+		StopCode string `json:"StopCode"`
+		FullName string `json:"FullName"`
+		Name string `json:"Name"`
+		ShortName string `json:"ShortName"`
+		Latitude float64 `json:"Latitude"`
+		Longitude float64 `json:"Longitude"`
+		Zone1 int `json:"Zone1"`
+		Zone2 int `json:"Zone2"`
+		TransferTime int `json:"TransferTime"`
+		Transfer int `json:"Transfer"`
+		BusStopType int `json:"BusStopType"`
+		BusStopId int `json:"BusStopId"`
+	} `json:"BusStops"`
+}
+
+type Kommune struct {
+	Entries[]struct {
+		Kommune         string `json:"kommune"`
+		Fylke			string `json:"fylke"`
+		Navn	        string `json:"navn"`
+	} `json:"entries"`
+}
+
+type Land struct {
+	Entries []struct {
+		Name string`json:"name"`
+		Code string `json:"code"`
+	} `json:"countries"`
+
+}
+
+var fylke Fylke
+var stasjon Stasjon
+var kolumbus Kolumbus
+var kommune Kommune
+var land Land
+
+func nettside1 (w http.ResponseWriter, r *http.Request) {
+	res, err := http.Get("https://hotell.difi.no/api/json/difi/geo/fylke")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+
+	jsonErr := json.Unmarshal(body, &fylke)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	temp, err := template.ParseFiles("fylke.html")
+	if err != nil {
+		log.Print(err)
+	}
+
+	err = temp.Execute(w, fylke)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
+
+func nettside2 (w http.ResponseWriter, r *http.Request) {
+	res, err := http.Get("https://hotell.difi.no/api/json/stavanger/miljostasjoner")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+
+	jsonErr := json.Unmarshal(body, &stasjon)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	temp, err := template.ParseFiles("stasjon.html")
+	if err != nil {
+		log.Print(err)
+	}
+
+	err = temp.Execute(w, stasjon)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
+
+func nettside3 (w http.ResponseWriter, r *http.Request) {
+	res, err := http.Get("http://sanntidsappservice-web-prod.azurewebsites.net/busstops?format=json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+
+	jsonErr := json.Unmarshal(body, &kolumbus)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	temp, err := template.ParseFiles("kolumbus.html")
+	if err != nil {
+		log.Print(err)
+	}
+
+	err = temp.Execute(w, kolumbus)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
+
+func nettside4 (w http.ResponseWriter, r *http.Request) {
+	res, err := http.Get ("https://hotell.difi.no/api/json/difi/geo/kommune?fylke=14")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+
+	jsonErr := json.Unmarshal(body, &kommune)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	temp, err := template.ParseFiles("kommune.html")
+	if err != nil {
+		log.Print(err)
+	}
+
+	err = temp.Execute(w,kommune)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
+
+func nettside5 (w http.ResponseWriter, r *http.Request) {
+	res, err := http.Get("http://api.nobelprize.org/v1/country.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+
+	jsonErr := json.Unmarshal(body, &land)
+	if jsonErr != nil {
+		log.Fatal(jsonErr)
+	}
+
+	temp, err := template.ParseFiles("land.html")
+	if err != nil {
+		log.Print(err)
+	}
+
+	err = temp.Execute(w, land)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+}
+
+func main() {
+	http.HandleFunc("/", hello)
+	http.HandleFunc("/1", nettside1)
+	http.HandleFunc("/2", nettside2)
+	http.HandleFunc("/3", nettside3)
+	http.HandleFunc("/4", nettside4)
+	http.HandleFunc("/5", nettside5)
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		panic(err)
+	}
+}
