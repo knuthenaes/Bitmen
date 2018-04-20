@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oppgave 2</title>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" align="center">
+            <div class="container">
+                <h2>Nobelpriser Land</h2>
+                <p>Data hentet fra <b>http://api.nobelprize.org/v1/country.json</b></p>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Code</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range $.Entries}}
+                    <tr>
+                        <th>{{.Name}}</th>
+                        <th>{{.Code}}</th>
+                    </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</head>
+</html>
