@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oppgave 2</title>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" align="center">
+            <div class="container">
+                <h2>Informasjon om Kommune</h2>
+                <p>Data hentet fra <b>https://hotell.difi.no/api/json/difi/geo/kommune?fylke=14</b></p>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Kommune</th>
+                        <th>Fylke</th>
+                        <th>Navn</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range $.Entries}}
+                    <tr>
+                        <th>{{.Kommune}}</th>
+                        <th>{{.Fylke}}</th>
+                        <th>{{.Navn}}</th>
+                    </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</head>
+</html>
