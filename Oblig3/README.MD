@@ -7,7 +7,7 @@
 * Vemund H. Jernsletten
 
 
-## [Oppgave 1](https://github.com/knuthenaes/Bitmen/tree/master/Oblig3/src/Oppgave%201) ##
+## [Oppgave 1](https://github.com/knuthenaes/Bitmen/tree/master/Oblig3/src/Oppgave%201%20og%20Oppgave%202) ##
 
 *a)* Sett opp en webserver som lytter til port 8080.
 
@@ -15,7 +15,7 @@
 Strengen skal vises i nettleseren.
 
 
-## [Oppgave 2](https://github.com/knuthenaes/Bitmen/tree/master/Oblig3/src/Oppgave%202) API kall og behandling av JSON og HTML templates ##
+## [Oppgave 2](https://github.com/knuthenaes/Bitmen/tree/master/Oblig3/src/Oppgave%201%20og%20Oppgave%202) API kall og behandling av JSON og HTML templates ##
 
 *a)* Presenter data på webserveren slik at den er leselig for mennesker når klienter aksesserer stiene /1, /2, /3, /4, /5.
 
