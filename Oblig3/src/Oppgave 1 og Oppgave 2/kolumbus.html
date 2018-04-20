@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oppgave 2</title>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" align="center">
+            <div class="container">
+                <h2>Kolumbus bus stops</h2>
+                <p>Data hentet fra <b>http://sanntidsappservice-web-prod.azurewebsites.net/busstops?format=json</b>
+                    <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>CompanyCode</th>
+                        <th>Dataset</th>
+                        <th>StopCode</th>
+                        <th>FullName</th>
+                        <th>Name</th>
+                        <th>ShortName</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Zone1</th>
+                        <th>Zone2</th>
+                        <th>TransferTime</th>
+                        <th>Transfer</th>
+                        <th>BusStopType</th>
+                        <th>BusStopId</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{range $.Entries}}
+                    <tr>
+                        <th>{{.CompanyCode}}</th>
+                        <th>{{.Dataset}}</th>
+                        <th>{{.StopCode}}</th>
+                        <th>{{.FullName}}</th>
+                        <th>{{.Name}}</th>
+                        <th>{{.ShortName}}</th>
+                        <th>{{.Latitude}}</th>
+                        <th>{{.Longitude}}</th>
+                        <th>{{.Zone1}}</th>
+                        <th>{{.Zone2}}</th>
+                        <th>{{.TransferTime}}</th>
+                        <th>{{.Transfer}}</th>
+                        <th>{{.BusStopType}}</th>
+                        <th>{{.BusStopId}}</th>
+                    </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</head>
+</html>
