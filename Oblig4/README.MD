@@ -35,3 +35,9 @@ Værapplikasjon som returner værdato for en oppgitt data fra brukeren, og avhen
 I tillegg skal dere utvikle enhetstester for å kvalitetssikre at kildekoden oppfører seg pålitelig under forventede og uforventede betingelser. Det er fordelaktig at samtlige enheter har en eller flere enhetstester. Defensiv programmering skal anvendes der det er fornuftig, for å øke robustheten på applikasjonen.
 
 Oppgaven vil bli bedømt ut fra løsning i henhold til oppgavetekst og anvendelse av konsepter og teori fra forelesninger og tidligere innleveringer; f.eks. feilhåndtering og korrekt håndtering av prosessignalring, beskrivelse av hardware/software og nettverksegenskaper.
+
+Denne oppgaven er ferdigstilt i kollaborasjon med Team Vestfold og Farsund
+
+## Installasjonsinstrukser ##
+
+1. 
