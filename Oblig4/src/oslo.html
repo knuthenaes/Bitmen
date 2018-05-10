@@ -1,1 +1,91 @@
-123123
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {box-sizing: border-box}
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 33.3%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+
+        #Oslo {background-color: cornflowerblue;}
+    </style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Oslo', this, 'cornflowerblue')" id="defaultOpen">Oslo</button>
+<button class="tablink" onclick="location.href='/2';" value="Trondheim">Trondheim</button>
+<button class="tablink" onclick="location.href='/3';" value="Stavanger">Stavanger</button>
+
+
+
+<div id="Oslo" class="tabcontent">
+    <h1><center><font color="#ffd700">Daglig værmelding for {{ .Name }}</font></center></h1>
+
+    <p><center>Lufttrykket er {{ .Main.Pressure }} kPa</center></p>
+    <p><center>Luftfuktigheten er {{ .Main.Humidity }} %</center></p>
+    <p><center>Vindhastigheten er {{ .Wind.Speed }} m/s</center></p>
+    <p><center> {{ .Main.TempA }} </center></p>
+    <center>
+        <a href="https://www.accuweather.com/no/no/oslo/254946/weather-forecast/254946" class="aw-widget-legal"></a>
+        <div id="awcc1525166709579"
+             class="aw-widget-current"
+             data-locationkey="254946"
+             data-unit="c"
+             data-language="no"
+             data-useip="false"
+             data-uid="awcc1525166709579">
+        </div>
+        <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+    </center>
+
+    <a name="lkr-nearby-widget" data-params='{ "lat": 59.91273, "lng": 10.74609 }'
+       href="https://www.lookr.com/no/explore#!59.912730;10.746090-Oslo:oslo,norway"></a>
+    <script async src="https://api.lookr.com/widget/script/nearby.js"></script>
+</div>
+
+<script>
+    function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+
+    }
+    document.getElementById("defaultOpen").click();
+</script>
+</body>
+</html>
