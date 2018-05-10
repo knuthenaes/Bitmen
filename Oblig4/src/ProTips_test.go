@@ -9,7 +9,7 @@ import (
 	"io/ioutil"
 )
 
-//Henter JSON-fila og utfører unmarshal-kommando
+//Collecting JSON-file and executes an unmarshal-command
 func OsloTest (url string)  {
 	res, err := http.Get("http://api.openweathermap.org/data/2.5/weather?id=6453366&APPID=b50b6d19b643bd8438490d345969a894")
 	if err != nil {
@@ -52,7 +52,7 @@ func StavangerTest (url string){
 	}
 }
 
-//Tester om funksjonen returnerer en beskjed
+//Testing if the function is returning a message
 func TestProtipOslo(t *testing.T) {
 	OsloTest("http://api.openweathermap.org/data/2.5/weather?id=6453366&APPID=b50b6d19b643bd8438490d345969a894")
 	ProTipsOslo()
