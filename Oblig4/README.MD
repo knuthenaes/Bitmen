@@ -40,4 +40,6 @@ Denne oppgaven er ferdigstilt i kollaborasjon med Team Vestfold og Farsund
 
 ## Installasjonsinstrukser ##
 
-1. 
+* For å kjøre programmet må alle go og html filene inn i samme mappe på golang. 
+* Programmet kjøres ved kommandoen "go run vermelding.go" i terminalen eller cmd.
+* Testene kjøres ved kommando "go test".
